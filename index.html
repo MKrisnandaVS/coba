@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Delius&display=swap"
+      rel="stylesheet"
+    />
     <!-- Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Tailwindcss Config -->
@@ -28,16 +35,122 @@
     </script>
     <!-- CSS Config -->
     <style type="text/tailwindcss">
-      @layer utilities {
-        .content-auto {
-          content-visibility: auto;
-        }
+      /* Hamburger Start */
+      .hamburger-line {
+        @apply w-[30px] h-[2px] my-2 block bg-dark;
+      }
+
+      .hamburger-active > span:nth-child(1) {
+        @apply rotate-45;
+      }
+      .hamburger-active > span:nth-child(2) {
+        @apply scale-0;
+      }
+      .hamburger-active > span:nth-child(3) {
+        @apply -rotate-45;
+      }
+      /* Hamburger End */
+
+      /* Navbar Start */
+      .navbar-fixed {
+        @apply fixed z-[9999] bg-white bg-opacity-70;
+        backdrop-filter: blur(5px);
+        box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
+      }
+      /* Navbar End */
+
+      /* Body */
+      body {
+        font-family: "Delius";
       }
     </style>
     <!-- Tittle -->
     <title>My-Portfolio</title>
   </head>
   <body>
+    <!-- Header Start -->
+    <header
+      class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10"
+    >
+      <div class="container">
+        <div class="flex items-center justify-between relative">
+          <div class="px-4">
+            <a href="#home" class="font-bold text-lg text-primary block py-6"
+              >MKrisnandaVS</a
+            >
+          </div>
+          <div class="flex items-center px-4">
+            <button
+              id="hamburger"
+              name="hamburger"
+              type="button"
+              class="block absolute right-4 lg:hidden"
+            >
+              <span
+                class="origin-top-left hamburger-line transition duration-300 ease-in-out"
+              ></span>
+              <span
+                class="hamburger-line transition duration-300 ease-in-out"
+              ></span>
+              <span
+                class="origin-bottom-left hamburger-line transition duration-300 ease-in-out"
+              ></span>
+            </button>
+            <nav
+              id="nav-menu"
+              class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none"
+            >
+              <ul class="block lg:flex">
+                <li class="group">
+                  <a
+                    href="#home"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary"
+                    >Beranda</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#home"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary"
+                    >About Me</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#home"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary"
+                    >Portfolio</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#home"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary"
+                    >Clients</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#home"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary"
+                    >Blog</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#home"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
     <!-- Hero Section Start -->
     <section id="home" class="pt-36">
       <div class="container">
@@ -66,7 +179,7 @@
               <img
                 src="/img/krisna.jpg"
                 alt="Krisnanda"
-                class="max-w-full mx-auto h-auto rounded-xl lg:rounded-full"
+                class="max-w-full mx-auto h-auto rounded-xl lg:rounded-full shadow-xl shadow-primary"
               />
             </div>
           </div>
@@ -79,8 +192,8 @@
     <section id="about" class="pt-36 pb-32">
       <div class="container">
         <div class="flex flex-wrap">
-          <div class="w-full px-4 mb-10">
-            <h4 class="font-bold uppercase text-primary text-lg mb-3">
+          <div class="w-full px-4 mb-10 lg:w-1/2">
+            <h4 class="font-bold uppercase text-primary text-xl mb-3">
               About Me
             </h4>
             <h2 class="font-bold text-dark text-3xl mb-5 max-w-md">
@@ -91,8 +204,10 @@
               esse voluptatum, beatae quibusdam iure dolores perferendis?
             </p>
           </div>
-          <div class="w-full px-4">
-            <h3 class="text-dark font-semibold text-2xl mb-4">Ayo Berteman</h3>
+          <div class="w-full px-4 lg:w-1/2">
+            <h3 class="text-dark font-bold text-2xl mb-4 lg:pt-10">
+              Ayo Berteman
+            </h3>
             <p class="font-medium text-base text-secondary max-w-xl mb-4">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia
               perferendis architecto velit cupiditate unde. Dolores non nesciunt
@@ -101,9 +216,9 @@
             <div class="flex items-center">
               <!-- Instagram -->
               <a
-                href=""
+                href="https://www.instagram.com/muhammadkrisnanda_/"
                 target="_blank"
-                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white text-slate-300 transition duration-300 ease-in-out"
               >
                 <svg
                   role="img"
@@ -118,11 +233,33 @@
                   />
                 </svg>
               </a>
+              <!-- Linkedin -->
+              <a
+                href="https://www.linkedin.com/in/muhammad-krisnanda-vilovan-saputra-6384242a1/"
+                target="_blank"
+                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white text-slate-300 transition duration-300 ease-in-out"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="20"
+                  viewBox="0 0 50 50"
+                  class="fill-current"
+                >
+                  <path
+                    d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"
+                  ></path>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
     <!-- About Section End -->
+
+    <!-- JS -->
+    <script src="script.js"></script>
   </body>
 </html>
