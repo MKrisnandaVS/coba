@@ -1,17 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- CDN -->
+    <!-- Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Tailwind Config -->
+    <!-- Tailwindcss Config -->
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              clifford: "#da373d",
+              primary: "#0891b2",
+              dark: "#0f172a",
             },
           },
         },
@@ -25,9 +26,34 @@
         }
       }
     </style>
+    <!-- Tittle -->
     <title>My-Portfolio</title>
   </head>
   <body>
-    <h1 class="bg-slate-500 text-white">hello</h1>
+    <section id="home" class="pt-36">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="w-full self-center px-4">
+            <h1 class="text-base font-semibold text-primary">
+              Assalamualaikum🙏🏼, Saya
+              <span class="block font-bold text-dark text-4xl mt-1"
+                >Krisnanda</span
+              >
+            </h1>
+            <h2 class="font-medium text-slate-600 text-lg mb-5">
+              Data Scientist & Astrophile
+            </h2>
+            <p class="font-medium text-slate-500 mb-10 leading-relaxed">
+              Lorem ipsum dolor sit.
+            </p>
+            <a
+              href="#"
+              class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:bg-cyan-500"
+              >Hubungi Saya</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
