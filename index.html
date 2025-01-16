@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
 
 <head>
@@ -35,39 +35,51 @@
   <!-- CSS Config -->
   <style type="text/tailwindcss">
     /* Hamburger Start */
-      .hamburger-line {
-        @apply w-[30px] h-[2px] my-2 block bg-dark dark:bg-white;
-      }
+			.hamburger-line {
+				@apply w-[30px] h-[2px] my-2 block bg-dark dark:bg-white;
+			}
 
-      .hamburger-active > span:nth-child(1) {
-        @apply rotate-45;
-      }
-      .hamburger-active > span:nth-child(2) {
-        @apply scale-0;
-      }
-      .hamburger-active > span:nth-child(3) {
-        @apply -rotate-45;
-      }
-      /* Hamburger End */
+			.hamburger-active > span:nth-child(1) {
+				@apply rotate-45;
+			}
+			.hamburger-active > span:nth-child(2) {
+				@apply scale-0;
+			}
+			.hamburger-active > span:nth-child(3) {
+				@apply -rotate-45;
+			}
+			/* Hamburger End */
 
-      /* Navbar Start */
-      .navbar-fixed {
-        @apply fixed z-[9999] bg-white bg-opacity-70 dark:bg-dark dark:bg-opacity-70;
-        backdrop-filter: blur(5px);
-        box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
-      }
-      /* Navbar End */
+			/* Navbar Start */
+			.navbar-fixed {
+				@apply fixed z-[9999] bg-white bg-opacity-70 dark:bg-dark dark:bg-opacity-70;
+				backdrop-filter: blur(5px);
+				box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
+			}
+			/* Navbar End */
 
-      /* Dark-Toggle */
-      #dark-toggle:checked + label div.toggle-circle {
-        @apply translate-x-3;
-      }
+			/* Slider Start*/
+			.slides {
+				display: flex;
+			}
+			.slide {
+				min-width: 100%;
+			}
+			.slide:not(.active) {
+				display: none;
+			}
+			/* Slider End */
 
-      /* Body */
-      body {
-        font-family: "Delius";
-      }
-    </style>
+			/* Dark-Toggle */
+			#dark-toggle:checked + label div.toggle-circle {
+				@apply translate-x-3;
+			}
+
+			/* Body */
+			body {
+				font-family: "Delius";
+			}
+		</style>
   <!-- Darkmode -->
   <script>
     if (
@@ -213,7 +225,8 @@
             Ayo Berteman
           </h3>
           <p class="font-medium text-base text-secondary max-w-xl mb-4">
-            Mau ngobrol soal kerjaan, hobi, atau apa aja? Gue siap jadi teman diskusi!
+            Mau ngobrol soal kerjaan, hobi, atau apa aja? Gue siap jadi teman
+            diskusi!
           </p>
           <div class="flex items-center">
             <!-- Instagram -->
@@ -254,12 +267,12 @@
             Newest Project
           </h2>
           <p class="font-medium text-md text-secondary md:text-lg">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit vel
-            quos aliquid et consectetur molestias?
+            Berikut ini adalah project terbaru yang saya buat
           </p>
         </div>
       </div>
 
+      <!-- Portfolio Content -->
       <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
         <div class="mb-12 p-4 md:w-1/2">
           <div class="rounded-md shadow-md overflow-hidden">
@@ -291,7 +304,7 @@
             Yang Pernah Bekerjasama
           </h2>
           <p class="font-medium text-md text-secondary md:text-lg">
-            Berikut adalah client yang bekerjasama dengan saya
+            Berikut ini adalah client yang bekerjasama dengan saya
           </p>
         </div>
       </div>
@@ -322,8 +335,7 @@
             Newest Content
           </h2>
           <p class="font-medium text-md text-secondary md:text-lg">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit vel
-            quos aliquid et consectetur molestias?
+            Berikut ini adalah artikel yang saya tulis
           </p>
         </div>
       </div>
