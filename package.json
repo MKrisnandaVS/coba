@@ -1,0 +1,21 @@
+{
+  "name": "coba",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tailwindcss -i src/assets/css/style.css -o src/dist/output.css --watch "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MKrisnandaVS/coba.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MKrisnandaVS/coba/issues"
+  },
+  "homepage": "https://github.com/MKrisnandaVS/coba#readme"
+}
