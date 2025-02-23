@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/MKrisnandaVS/coba/issues"
   },
-  "homepage": "https://github.com/MKrisnandaVS/coba#readme"
+  "homepage": "https://github.com/MKrisnandaVS/coba#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
 }

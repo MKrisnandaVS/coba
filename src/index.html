@@ -1,472 +1,559 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet" />
+    <!-- Darkmode -->
+    <script>
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
 
-  <!-- Darkmode -->
-  <script>
-    if (
-      localStorage.getItem("theme") === "dark" ||
-      (!localStorage.getItem("theme") &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  </script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="./dist/output.css" />
+    <!-- Tittle -->
+    <link rel="icon" href="./img/mkrisnandavs.png" type="image/png" />
+    <title>My-Portfolio</title>
+  </head>
 
-  <!-- Tittle -->
-  <link rel="icon" href="/img/mkrisnandavs.png" type="image/png" />
-  <title>My-Portfolio</title>
-</head>
+  <body>
+    <!-- Header Start -->
+    <header
+      class="bg-transparent absolute top-0 left-0 w-full flex items-center z-[9999]"
+    >
+      <div class="container">
+        <div class="flex items-center justify-between relative">
+          <div class="px-4">
+            <a href="#home" class="block pt-2 pb-2"
+              ><img
+                src="./assets/img/coba.png"
+                alt=""
+                class="rounded-full w-12 h-12 object-cover"
+            /></a>
+          </div>
+          <div class="flex items-center px-4">
+            <button
+              id="hamburger"
+              name="hamburger"
+              type="button"
+              class="block absolute right-4 lg:hidden"
+            >
+              <span
+                class="origin-top-left hamburger-line transition duration-300 ease-in-out"
+              ></span>
+              <span
+                class="hamburger-line transition duration-300 ease-in-out"
+              ></span>
+              <span
+                class="origin-bottom-left hamburger-line transition duration-300 ease-in-out"
+              ></span>
+            </button>
+            <nav
+              id="nav-menu"
+              class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark dark:shadow-slate-500 lg:dark:bg-transparent"
+            >
+              <ul class="block lg:flex">
+                <li class="group">
+                  <a
+                    href="#home"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary dark:text-white"
+                    >Beranda</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#about"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary dark:text-white"
+                    >About Me</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#portfolio"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary dark:text-white"
+                    >Portfolio</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#clients"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary dark:text-white"
+                    >Clients</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#blog"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary dark:text-white"
+                    >Blog</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#contact"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary dark:text-white"
+                    >Contact</a
+                  >
+                </li>
+                <li class="flex items-center pl-8 mt-5 lg:mt-0">
+                  <div class="flex items-center">
+                    <!-- Logo Matahari -->
+                    <svg
+                      class="mr-2 h-6 w-6"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 48 48"
+                    >
+                      <path fill="#FF9800" d="M11 11H37V37H11z"></path>
+                      <path
+                        fill="#FF9800"
+                        d="M11.272 11.272H36.728V36.728H11.272z"
+                        transform="rotate(-45.001 24 24)"
+                      ></path>
+                      <path
+                        fill="#FFEB3B"
+                        d="M13,24c0,6.077,4.923,11,11,11c6.076,0,11-4.923,11-11s-4.924-11-11-11C17.923,13,13,17.923,13,24"
+                      ></path>
+                    </svg>
 
-<body>
-  <!-- Header Start -->
-  <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-[9999]">
-    <div class="container">
-      <div class="flex items-center justify-between relative">
-        <div class="px-4">
-          <a href="#home" class="block pt-2 pb-2"><img src="./assets/img/coba.png" alt=""
-              class="rounded-full w-12 h-12 object-cover" /></a>
-        </div>
-        <div class="flex items-center px-4">
-          <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
-            <span class="origin-top-left hamburger-line transition duration-300 ease-in-out"></span>
-            <span class="hamburger-line transition duration-300 ease-in-out"></span>
-            <span class="origin-bottom-left hamburger-line transition duration-300 ease-in-out"></span>
-          </button>
-          <nav id="nav-menu"
-            class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark dark:shadow-slate-500 lg:dark:bg-transparent">
-            <ul class="block lg:flex">
-              <li class="group">
-                <a href="#home"
-                  class="flex text-base text-dark py-2 mx-8 group-hover:text-primary dark:text-white">Beranda</a>
-              </li>
-              <li class="group">
-                <a href="#about"
-                  class="flex text-base text-dark py-2 mx-8 group-hover:text-primary dark:text-white">About Me</a>
-              </li>
-              <li class="group">
-                <a href="#portfolio"
-                  class="flex text-base text-dark py-2 mx-8 group-hover:text-primary dark:text-white">Portfolio</a>
-              </li>
-              <li class="group">
-                <a href="#clients"
-                  class="flex text-base text-dark py-2 mx-8 group-hover:text-primary dark:text-white">Clients</a>
-              </li>
-              <li class="group">
-                <a href="#blog"
-                  class="flex text-base text-dark py-2 mx-8 group-hover:text-primary dark:text-white">Blog</a>
-              </li>
-              <li class="group">
-                <a href="#contact"
-                  class="flex text-base text-dark py-2 mx-8 group-hover:text-primary dark:text-white">Contact</a>
-              </li>
-              <li class="flex items-center pl-8 mt-5 lg:mt-0">
-                <div class="flex items-center">
-                  <!-- Logo Matahari -->
-                  <svg class="mr-2 h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path fill="#FF9800" d="M11 11H37V37H11z"></path>
-                    <path fill="#FF9800" d="M11.272 11.272H36.728V36.728H11.272z" transform="rotate(-45.001 24 24)">
-                    </path>
-                    <path fill="#FFEB3B"
-                      d="M13,24c0,6.077,4.923,11,11,11c6.076,0,11-4.923,11-11s-4.924-11-11-11C17.923,13,13,17.923,13,24">
-                    </path>
-                  </svg>
-
-                  <input type="checkbox" id="dark-toggle" class="hidden" />
-                  <label for="dark-toggle">
-                    <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
-                      <div class="toggle-circle h-4 w-4 bg-white rounded-full transition duration-300 ease-in-out">
+                    <input type="checkbox" id="dark-toggle" class="hidden" />
+                    <label for="dark-toggle">
+                      <div
+                        class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1"
+                      >
+                        <div
+                          class="toggle-circle h-4 w-4 bg-white rounded-full transition duration-300 ease-in-out"
+                        ></div>
                       </div>
-                    </div>
-                  </label>
+                    </label>
 
-                  <!-- Logo Bulan -->
-                  <svg class="ml-2 h-6 w-6 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-                  </svg>
-                </div>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- Header End -->
-
-  <!-- Hero Section Start -->
-  <section id="home" class="pt-[90px] dark:bg-dark">
-    <div class="container">
-      <div class="flex flex-wrap">
-        <div class="w-full self-center px-4 lg:w-1/2">
-          <h1 class="text-base font-semibold text-primary lg:text-2xl">
-            Assalamualaikum🙏🏼, Saya
-            <span class="block font-bold text-dark text-3xl mt-1 lg:text-5xl dark:text-white">M. Krisnanda V. S.</span>
-          </h1>
-          <h2 class="font-medium text-slate-600 text-lg mb-5 lg:text-xl dark:text-white">
-            Data Scientist & Astrophile
-          </h2>
-          <p class="font-medium text-secondary mb-10 leading-relaxed lg:text-xl lg:text-white">
-            خَيْرُ النَّاسِ أَنْفَعُهُمْ لِلنَّاسِ
-          </p>
-          <a href="https://www.instagram.com/muhammadkrisnanda_/" target="_blank"
-            class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:opacity-80 transition duration-300 ease-in-out">Hubungi
-            Saya</a>
-        </div>
-        <div class="w-full self-end px-4 lg:w-1/2">
-          <div class="relative mt-10 lg:mt-9 lg:right-0">
-            <img src="./assets/img/krisna.jpg" alt="Krisnanda"
-              class="max-w-full mx-auto h-auto rounded-xl lg:rounded-full shadow-xl shadow-primary" />
+                    <!-- Logo Bulan -->
+                    <svg
+                      class="ml-2 h-6 w-6 text-blue-500"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"
+                      />
+                    </svg>
+                  </div>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Hero Section End -->
+    </header>
+    <!-- Header End -->
 
-  <!-- About Section Start -->
-  <section id="about" class="pt-36 pb-[90px] dark:bg-dark">
-    <div class="container">
-      <div class="flex flex-wrap">
-        <div class="w-full px-4 mb-10 lg:w-1/2">
-          <h4 class="font-bold uppercase text-primary text-xl mb-3">
-            About Me
-          </h4>
-          <h2 class="font-bold text-dark text-3xl mb-5 max-w-md dark:text-white">
-            Hobi gue? Gabungin ide-ide gokil jadi sesuatu yang asik!.
-          </h2>
-          <p class="font-medium text-base text-secondary max-w-xl">
-            Kreatif | Inovatif
-          </p>
-        </div>
-        <div class="w-full px-4 lg:w-1/2">
-          <h3 class="text-dark font-bold text-2xl mb-4 lg:pt-10 dark:text-white">
-            Ayo Berteman
-          </h3>
-          <p class="font-medium text-base text-secondary max-w-xl mb-4">
-            Mau ngobrol soal kerjaan, hobi, atau apa aja? Gue siap jadi teman
-            diskusi!
-          </p>
-          <div class="flex items-center">
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/muhammadkrisnanda_/" target="_blank"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white text-slate-300 transition duration-300 ease-in-out">
-              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20" class="fill-current">
-                <title>Instagram</title>
-                <path
-                  d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
-              </svg>
-            </a>
-            <!-- Linkedin -->
-            <a href="https://www.linkedin.com/in/muhammad-krisnanda-vilovan-saputra-6384242a1/" target="_blank"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white text-slate-300 transition duration-300 ease-in-out">
-              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" viewBox="0 0 50 50"
-                class="fill-current">
-                <path
-                  d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z">
-                </path>
-              </svg>
-            </a>
+    <!-- Hero Section Start -->
+    <section id="home" class="pt-[90px] dark:bg-dark">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="w-full self-center px-4 lg:w-1/2">
+            <h1 class="text-base font-semibold text-primary lg:text-2xl">
+              Assalamualaikum🙏🏼, Saya
+              <span
+                class="block font-bold text-dark text-3xl mt-1 lg:text-5xl dark:text-white"
+                >M. Krisnanda V. S.</span
+              >
+            </h1>
+            <h2
+              class="font-medium text-slate-600 text-lg mb-5 lg:text-xl dark:text-white"
+            >
+              Data Scientist & Astrophile
+            </h2>
+            <p
+              class="font-medium text-secondary mb-10 leading-relaxed lg:text-xl lg:text-white"
+            >
+              خَيْرُ النَّاسِ أَنْفَعُهُمْ لِلنَّاسِ
+            </p>
+            <a
+              href="https://www.instagram.com/muhammadkrisnanda_/"
+              target="_blank"
+              class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:opacity-80 transition duration-300 ease-in-out"
+              >Hubungi Saya</a
+            >
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- About Section End -->
-
-  <!-- Portfolio Start -->
-  <section id="portfolio" class="pt-[90px] pb-16 bg-slate-200 dark:bg-dark">
-    <div class="container">
-      <div class="w-full px-4">
-        <div class="max-w-xl mx-auto text-center mb-16">
-          <h4 class="font-semibold text-xl text-primary mb-2 xl:text-2xl">
-            Portfolio
-          </h4>
-          <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl xl:text-5xl dark:text-white">
-            Newest Project
-          </h2>
-          <p class="font-medium text-md text-secondary md:text-lg">
-            Berikut ini adalah project terbaru yang saya buat
-          </p>
-        </div>
-      </div>
-
-      <!-- Portfolio Content -->
-      <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
-        <div class="mb-12 p-4 md:w-1/2">
-          <div class="rounded-md shadow-md overflow-hidden">
-            <a href="https://sditbicpaskot.netlify.app/" target="_blank">
-              <img src="./assets/img/portfolio/bicproject.png" alt="" width="w-full" />
-            </a>
-          </div>
-          <h3 class="font-semibold text-dark text-xl mt-5 mb-3 dark:text-white">
-            Project Web SDIT BIC KOTA PASURUAN
-          </h3>
-          <p class="font-medium text-base text-secondary">
-            Use HTML, Tailwindcss and Javascript
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Portfolio End -->
-
-  <!-- Clients Start -->
-  <section id="clients" class="pt-[90px] pb-32 bg-slate-700">
-    <div class="container">
-      <div class="w-full px-4">
-        <div class="max-w-xl mx-auto text-center mb-16">
-          <h4 class="font-semibold text-xl text-primary mb-2 xl:text-2xl">
-            Clients
-          </h4>
-          <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl xl:text-5xl">
-            Yang Pernah Bekerjasama
-          </h2>
-          <p class="font-medium text-md text-secondary md:text-lg">
-            Berikut ini adalah client yang bekerjasama dengan saya
-          </p>
-        </div>
-      </div>
-
-      <div class="w-full px-4">
-        <div class="flex flex-wrap items-center justify-center">
-          <!-- List of client logos -->
-          <a href="#"
-            class="max-w-[120px] mx-4 py-4 md:grayscale md:hover:grayscale-0 md:transition md:duration-500 md:opacity-60 md:hover:opacity-100">
-            <img src="./assets/img/clients/bic.png" alt="Arch Linux Logo" class="w-full h-auto" />
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Clients End -->
-
-  <!-- Blog Start -->
-  <section id="blog" class="pt-[90px] pb-32 bg-slate-200 dark:bg-dark">
-    <div class="container">
-      <div class="w-full px-4">
-        <!-- Heading Section -->
-        <div class="max-w-xl mx-auto text-center mb-16">
-          <h4 class="font-semibold text-xl text-primary mb-2 xl:text-2xl">
-            Blog
-          </h4>
-          <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl xl:text-5xl dark:text-white">
-            Newest Content
-          </h2>
-          <p class="font-medium text-md text-secondary md:text-lg">
-            Berikut ini adalah artikel yang saya tulis
-          </p>
-        </div>
-      </div>
-      <!-- Blog Content -->
-      <div class="flex flex-wrap">
-        <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-          <div class="bg-white rounded-xl overflow-hidden shadow-lg mb-10">
-            <img src="./assets/img/blog/istockphoto-1705602366-1024x1024.jpg"
-              alt="Example blog image showing relevant content" class="w-full" />
-            <div class="py-8 px-6">
-              <h3 class="w-max-xl mb-3 font-semibold text-xl text-dark truncate">
-                Tips Belajar Biar Pintar
-              </h3>
-              <p class="font-medium text-secondary text-base mb-6 truncate">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-                explicabo animi pariatur.
-              </p>
-              <a href="" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Baca
-                Selengkapnya</a>
-            </div>
-          </div>
-        </div>
-        <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-          <div class="bg-white rounded-xl overflow-hidden shadow-lg mb-10">
-            <img src="./assets/img/blog/istockphoto-1705602366-1024x1024.jpg"
-              alt="Example blog image showing relevant content" class="w-full" />
-            <div class="py-8 px-6">
-              <h3 class="w-max-xl mb-3 font-semibold text-xl text-dark truncate">
-                Tips Belajar Biar Pintar
-              </h3>
-              <p class="font-medium text-secondary text-base mb-6 truncate">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-                explicabo animi pariatur.
-              </p>
-              <a href="" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Baca
-                Selengkapnya</a>
-            </div>
-          </div>
-        </div>
-        <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-          <div class="bg-white rounded-xl overflow-hidden shadow-lg mb-10">
-            <img src="./assets/img/blog/istockphoto-1705602366-1024x1024.jpg"
-              alt="Example blog image showing relevant content" class="w-full" />
-            <div class="py-8 px-6">
-              <h3 class="w-max-xl mb-3 font-semibold text-xl text-dark truncate">
-                Tips Belajar Biar Pintar
-              </h3>
-              <p class="font-medium text-secondary text-base mb-6 truncate">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-                explicabo animi pariatur.
-              </p>
-              <a href="" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Baca
-                Selengkapnya</a>
+          <div class="w-full self-end px-4 lg:w-1/2">
+            <div class="relative mt-10 lg:mt-9 lg:right-0">
+              <img
+                src="./assets/img/krisna.jpg"
+                alt="Krisnanda"
+                class="max-w-full mx-auto h-auto rounded-xl lg:rounded-full shadow-xl shadow-primary"
+              />
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Blog End -->
+    </section>
+    <!-- Hero Section End -->
 
-  <!-- Contact Start -->
-  <!-- <section id="contact" class="pt-36 pb-32">
+    <!-- About Section Start -->
+    <section id="about" class="pt-36 pb-[90px] dark:bg-dark">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="w-full px-4 mb-10 lg:w-1/2">
+            <h4 class="font-bold uppercase text-primary text-xl mb-3">
+              About Me
+            </h4>
+            <h2
+              class="font-bold text-dark text-3xl mb-5 max-w-md dark:text-white"
+            >
+              Hobi gue? Gabungin ide-ide gokil jadi sesuatu yang asik!.
+            </h2>
+            <p class="font-medium text-base text-secondary max-w-xl">
+              Kreatif | Inovatif
+            </p>
+          </div>
+          <div class="w-full px-4 lg:w-1/2">
+            <h3
+              class="text-dark font-bold text-2xl mb-4 lg:pt-10 dark:text-white"
+            >
+              Ayo Berteman
+            </h3>
+            <p class="font-medium text-base text-secondary max-w-xl mb-4">
+              Mau ngobrol soal kerjaan, hobi, atau apa aja? Gue siap jadi teman
+              diskusi!
+            </p>
+            <div class="flex items-center">
+              <!-- Instagram -->
+              <a
+                href="https://www.instagram.com/muhammadkrisnanda_/"
+                target="_blank"
+                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white text-slate-300 transition duration-300 ease-in-out"
+              >
+                <svg
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  class="fill-current"
+                >
+                  <title>Instagram</title>
+                  <path
+                    d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"
+                  />
+                </svg>
+              </a>
+              <!-- Linkedin -->
+              <a
+                href="https://www.linkedin.com/in/muhammad-krisnanda-vilovan-saputra-6384242a1/"
+                target="_blank"
+                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white text-slate-300 transition duration-300 ease-in-out"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="20"
+                  viewBox="0 0 50 50"
+                  class="fill-current"
+                >
+                  <path
+                    d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- Portfolio Start -->
+    <section id="portfolio" class="pt-[90px] pb-16 bg-slate-200 dark:bg-dark">
       <div class="container">
         <div class="w-full px-4">
           <div class="max-w-xl mx-auto text-center mb-16">
             <h4 class="font-semibold text-xl text-primary mb-2 xl:text-2xl">
-              Contact
+              Portfolio
             </h4>
             <h2
-              class="font-bold text-dark text-3xl mb-4 sm:text-4xl xl:text-5xl"
+              class="font-bold text-dark text-3xl mb-4 sm:text-4xl xl:text-5xl dark:text-white"
             >
-              Hubungi Kami
+              Newest Project
             </h2>
             <p class="font-medium text-md text-secondary md:text-lg">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit vel
-              quos aliquid et consectetur molestias?
+              Berikut ini adalah project terbaru yang saya buat
             </p>
           </div>
         </div>
-        <form>
-          <div class="w-full lg:w-2/3 lg:mx-auto">
-            <div class="w-full mb-8 px-4">
-              <label for="name" class="text-base text-primary font-bold"
-                >Nama</label
-              >
-              <div>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"
-                  placeholder="Masukkan nama Anda"
-                  aria-label="Nama"
-                />
-              </div>
-            </div>
-            <div class="w-full mb-8 px-4">
-              <label for="name" class="text-base text-primary font-bold"
-                >Email</label
-              >
-              <div>
-                <input
-                  type="email"
-                  name="name"
-                  id="name"
-                  class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"
-                  placeholder="Masukkan email Anda"
-                  aria-label="email"
-                />
-              </div>
-            </div>
-            <div class="w-full mb-8 px-4">
-              <label for="name" class="text-base text-primary font-bold"
-                >Pesan</label
-              >
-              <textarea
-                name="message"
-                id="message"
-                class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-32"
-                placeholder="Masukkan pesan Anda"
-                aria-label="Pesan"
-              ></textarea>
-            </div>
-            <div class="w-full px-4">
-              <button
-                class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full w-full hover:opacity-80 hover:shadow-lg transition duration-500 ease-in-out"
-              >
-                Kirim
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </section> -->
-  <!-- Contact End -->
 
-  <!-- Footer Start -->
-  <section id="contact">
-    <footer class="bg-dark pt-24 pb-12 dark:bg-dark">
+        <!-- Portfolio Content -->
+        <div
+          class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto"
+        >
+          <div class="mb-12 p-4 md:w-1/2">
+            <div class="rounded-md shadow-md overflow-hidden">
+              <a href="https://sditbicpaskot.netlify.app/" target="_blank">
+                <img
+                  src="./assets/img/portfolio/bicproject.png"
+                  alt=""
+                  width="w-full"
+                />
+              </a>
+            </div>
+            <h3
+              class="font-semibold text-dark text-xl mt-5 mb-3 dark:text-white"
+            >
+              Project Web SDIT BIC KOTA PASURUAN
+            </h3>
+            <p class="font-medium text-base text-secondary">
+              Use HTML, Tailwindcss and Javascript
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Portfolio End -->
+
+    <!-- Clients Start -->
+    <section id="clients" class="pt-[90px] pb-32 bg-slate-700">
       <div class="container">
-        <div class="flex flex-wrap">
-          <div class="w-full px-4 mb-12 text-slate-400 md:w-1/3">
-            <h2 class="font-bold text-4xl text-white mb-5">MKVS</h2>
-            <h3 class="font-bold text-2xl mb-2">Info Ngopi, bisa hubungi</h3>
-            <p>
-              <a href="https://www.instagram.com/muhammadkrisnanda_/" target="_blank"
-                class="lg:text-4xl text-primary text-2xl">muhammadkrisnanda_</a>
+        <div class="w-full px-4">
+          <div class="max-w-xl mx-auto text-center mb-16">
+            <h4 class="font-semibold text-xl text-primary mb-2 xl:text-2xl">
+              Clients
+            </h4>
+            <h2
+              class="font-bold text-white text-3xl mb-4 sm:text-4xl xl:text-5xl"
+            >
+              Yang Pernah Bekerjasama
+            </h2>
+            <p class="font-medium text-md text-secondary md:text-lg">
+              Berikut ini adalah client yang bekerjasama dengan saya
             </p>
-            <p class="mt-3 text-lg">
-              Jl. Urip Sumoharjo, Kota Pasuruan, Jawa Timur
-            </p>
-          </div>
-          <div class="w-full px-4 mb-12 md:w-1/3">
-            <h3></h3>
           </div>
         </div>
-        <div class="w-full pt-10 border-t border-slate-700">
-          <div class="flex items-center justify-center mb-5">
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/muhammadkrisnanda_/" target="_blank"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white text-slate-300 transition duration-300 ease-in-out">
-              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20" class="fill-current">
-                <title>Instagram</title>
-                <path
-                  d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
-              </svg>
-            </a>
-            <!-- Linkedin -->
-            <a href="https://www.linkedin.com/in/muhammad-krisnanda-vilovan-saputra-6384242a1/" target="_blank"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white text-slate-300 transition duration-300 ease-in-out">
-              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" viewBox="0 0 50 50"
-                class="fill-current">
-                <path
-                  d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z">
-                </path>
-              </svg>
+
+        <div class="w-full px-4">
+          <div class="flex flex-wrap items-center justify-center">
+            <!-- List of client logos -->
+            <a
+              href="#"
+              class="max-w-[120px] mx-4 py-4 md:grayscale md:hover:grayscale-0 md:transition md:duration-500 md:opacity-60 md:hover:opacity-100"
+            >
+              <img
+                src="./assets/img/clients/bic.png"
+                alt="Arch Linux Logo"
+                class="w-full h-auto"
+              />
             </a>
           </div>
-          <p class="text-slate-500 font-medium text-sm text-center">
-            created by <span class="text-primary">MKrisnandaVS</span>
-          </p>
         </div>
       </div>
-    </footer>
-  </section>
-  <!-- Footer End -->
+    </section>
+    <!-- Clients End -->
 
-  <!-- Back to Top Start -->
-  <a href="#home"
-    class="hidden w-14 h-14 bg-primary rounded-full fixed z-[9999] bottom-4 right-4 p-4 justify-center items-center hover:bg-cyan-500 hover:transition hover duration-300 hover:animate-pulse"
-    id="to-top">
-    <span class="block w-5 h-5 border-t-2 border-l rotate-45 mt-3"></span>
-  </a>
-  <!-- Back to Top End -->
+    <!-- Blog Start -->
+    <section id="blog" class="pt-[90px] pb-32 bg-slate-200 dark:bg-dark">
+      <div class="container">
+        <div class="w-full px-4">
+          <!-- Heading Section -->
+          <div class="max-w-xl mx-auto text-center mb-16">
+            <h4 class="font-semibold text-xl text-primary mb-2 xl:text-2xl">
+              Blog
+            </h4>
+            <h2
+              class="font-bold text-dark text-3xl mb-4 sm:text-4xl xl:text-5xl dark:text-white"
+            >
+              Newest Content
+            </h2>
+            <p class="font-medium text-md text-secondary md:text-lg">
+              Berikut ini adalah artikel yang saya tulis
+            </p>
+          </div>
+        </div>
+        <!-- Blog Content -->
+        <div class="flex flex-wrap">
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg mb-10">
+              <img
+                src="./assets/img/blog/istockphoto-1705602366-1024x1024.jpg"
+                alt="Example blog image showing relevant content"
+                class="w-full"
+              />
+              <div class="py-8 px-6">
+                <h3
+                  class="w-max-xl mb-3 font-semibold text-xl text-dark truncate"
+                >
+                  Tips Belajar Biar Pintar
+                </h3>
+                <p class="font-medium text-secondary text-base mb-6 truncate">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+                  explicabo animi pariatur.
+                </p>
+                <a
+                  href=""
+                  class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80"
+                  >Baca Selengkapnya</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg mb-10">
+              <img
+                src="./assets/img/blog/istockphoto-1705602366-1024x1024.jpg"
+                alt="Example blog image showing relevant content"
+                class="w-full"
+              />
+              <div class="py-8 px-6">
+                <h3
+                  class="w-max-xl mb-3 font-semibold text-xl text-dark truncate"
+                >
+                  Tips Belajar Biar Pintar
+                </h3>
+                <p class="font-medium text-secondary text-base mb-6 truncate">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+                  explicabo animi pariatur.
+                </p>
+                <a
+                  href=""
+                  class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80"
+                  >Baca Selengkapnya</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg mb-10">
+              <img
+                src="./assets/img/blog/istockphoto-1705602366-1024x1024.jpg"
+                alt="Example blog image showing relevant content"
+                class="w-full"
+              />
+              <div class="py-8 px-6">
+                <h3
+                  class="w-max-xl mb-3 font-semibold text-xl text-dark truncate"
+                >
+                  Tips Belajar Biar Pintar
+                </h3>
+                <p class="font-medium text-secondary text-base mb-6 truncate">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+                  explicabo animi pariatur.
+                </p>
+                <a
+                  href=""
+                  class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80"
+                  >Baca Selengkapnya</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Blog End -->
 
-  <!-- JS -->
-  <script src="./assets/js/script.js"></script>
-</body>
+    <!-- Footer Start -->
+    <section id="contact">
+      <footer class="bg-dark pt-24 pb-12 dark:bg-dark">
+        <div class="container">
+          <div class="flex flex-wrap">
+            <div class="w-full px-4 mb-12 text-slate-400 md:w-1/3">
+              <h2 class="font-bold text-4xl text-white mb-5">MKVS</h2>
+              <h3 class="font-bold text-2xl mb-2">Info Ngopi, bisa hubungi</h3>
+              <p>
+                <a
+                  href="https://www.instagram.com/muhammadkrisnanda_/"
+                  target="_blank"
+                  class="lg:text-4xl text-primary text-2xl"
+                  >muhammadkrisnanda_</a
+                >
+              </p>
+              <p class="mt-3 text-lg">
+                Jl. Urip Sumoharjo, Kota Pasuruan, Jawa Timur
+              </p>
+            </div>
+            <div class="w-full px-4 mb-12 md:w-1/3">
+              <h3></h3>
+            </div>
+          </div>
+          <div class="w-full pt-10 border-t border-slate-700">
+            <div class="flex items-center justify-center mb-5">
+              <!-- Instagram -->
+              <a
+                href="https://www.instagram.com/muhammadkrisnanda_/"
+                target="_blank"
+                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white text-slate-300 transition duration-300 ease-in-out"
+              >
+                <svg
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  class="fill-current"
+                >
+                  <title>Instagram</title>
+                  <path
+                    d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"
+                  />
+                </svg>
+              </a>
+              <!-- Linkedin -->
+              <a
+                href="https://www.linkedin.com/in/muhammad-krisnanda-vilovan-saputra-6384242a1/"
+                target="_blank"
+                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white text-slate-300 transition duration-300 ease-in-out"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="20"
+                  viewBox="0 0 50 50"
+                  class="fill-current"
+                >
+                  <path
+                    d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+            <p class="text-slate-500 font-medium text-sm text-center">
+              created by <span class="text-primary">MKrisnandaVS</span>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <!-- Footer End -->
 
+    <!-- Back to Top Start -->
+    <a
+      href="#home"
+      class="hidden w-14 h-14 bg-primary rounded-full fixed z-[9999] bottom-4 right-4 p-4 justify-center items-center hover:bg-cyan-500 hover:transition hover duration-300 hover:animate-pulse"
+      id="to-top"
+    >
+      <span class="block w-5 h-5 border-t-2 border-l rotate-45 mt-3"></span>
+    </a>
+    <!-- Back to Top End -->
+
+    <!-- JS -->
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
